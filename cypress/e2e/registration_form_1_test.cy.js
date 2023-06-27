@@ -72,7 +72,7 @@ describe('This is first test suite, Veronika Rebane', () => { //today's date 12t
 
         // Scroll back to username input field
         cy.get('#username').scrollIntoView()
-        cy.get('#username').clear().type('  ')
+        cy.get('#username').clear().type(' ')
         cy.get('h2').contains('Password').click()
 
         // Asserting that Submit button is disabled
@@ -106,11 +106,11 @@ describe('This is first test suite, Veronika Rebane', () => { //today's date 12t
         cy.get('#lastName').type('Rebane')
         cy.get('input[name="password"]').type('MyPass')
         cy.get('[name="confirm"]').type('MyPass')
+        cy.get('h2').contains('Password').click()
 
         // Scroll back to phone number input field
         cy.get('[data-testid="phoneNumberTestId"]').scrollIntoView()
         cy.get('[data-testid="phoneNumberTestId"]').clear().type('  ')
-        cy.get('h2').contains('Password').click()
 
         // Asserting that Submit button and success message are disabled
         cy.get('.submit_button').should('be.disabled')
@@ -122,12 +122,11 @@ describe('This is first test suite, Veronika Rebane', () => { //today's date 12t
         // All other fields should be entered correctly
         // Assert that submit button is not enabled and that successful message is not visible
         cy.get('[data-testid="phoneNumberTestId"]').type('10203040')
-        cy.get('#username').type('Something')
-        cy.get('#firstName').type('Veronika')
-        cy.get('#lastName').type('Rebane')
+        cy.get('#username').type('DarkLord')
+        cy.get('#firstName').type('Severus')
+        cy.get('#lastName').type('Black')
         
-        cy.get('input[name="password"]').clear().type('  ')
-        cy.get('input[name="confirm"]').clear().type('  ')
+        cy.get('h2').contains('Password').click()
 
         // Asserting that Submit button is disabled
         cy.get('.submit_button').should('be.disabled')
@@ -151,6 +150,7 @@ describe('This is first test suite, Veronika Rebane', () => { //today's date 12t
         cy.get('#lastName').type('Rebane')
         cy.get('input[name="password"]').type('MyPass')
         cy.get('[name="confirm"]').type('MyPass')
+        cy.get('h2').contains('Password').click()
 
         // Asserting that Submit button is disabled
         cy.get('.submit_button').should('be.disabled')
